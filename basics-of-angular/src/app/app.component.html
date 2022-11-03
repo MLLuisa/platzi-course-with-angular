@@ -1,3 +1,15 @@
+<h1>*ngIf</h1>
+<input type="text" required [(ngModel)]="person.name" />
+<p *ngIf="person.name == 'nicolas'">Soy Nicolas</p>
+<p *ngIf="person.name == 'ivan'">Soy Ivan</p>
+<p *ngIf="person.name == 'luis' && person.age === 18; else elseBlock">
+  Soy Luis
+</p>
+<ng-template #elseBlock>
+  <p>Bloque de else</p>
+</ng-template>
+
+<hr />
 <h1>ngModel</h1>
 <input type="text" required #nameInput="ngModel" [(ngModel)]="person.name" />
 <p>Nombre: {{ person.name }}</p>
