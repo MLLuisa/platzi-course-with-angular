@@ -1,3 +1,27 @@
+<h1>*ngFor</h1>
+<input type="text" required [(ngModel)]="newName" />
+<button (click)="addName()">Add name</button>
+<ul>
+  <li *ngIf="names.length === 0">No hay nombres en la lista</li>
+  <li *ngFor="let name of names; index as i">
+    {{ i }}
+    {{ name }}
+    <button (click)="deleteName(i)">Delete</button>
+  </li>
+</ul>
+
+<h3>Lista de tareas</h3>
+<input type="text" required [(ngModel)]="newThingsToDo" />
+<button (click)="addThings()">Add thing to do</button>
+<ul>
+  <li *ngIf="thingsToDo.length === 0">No hay cosas que hacer</li>
+  <li *ngFor="let things of thingsToDo; index as i">
+    {{ things }}
+    <button (click)="deleteThings(i)">Delete</button>
+  </li>
+</ul>
+
+<hr />
 <h1>*ngIf</h1>
 <input type="text" required [(ngModel)]="person.name" />
 <p *ngIf="person.name == 'nicolas'">Soy Nicolas</p>

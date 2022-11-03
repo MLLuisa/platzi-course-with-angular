@@ -15,6 +15,12 @@ export class AppComponent {
     age: 20,
     avatar: 'https://img2.freepng.es/20190123/jtv/kisspng-computer-icons-vector-graphics-person-portable-net-myada-baaranmy-teknik-servis-hizmetleri-5c48d5c2849149.051236271548277186543.jpg'
   }
+  names: string[] = ['julia', 'marta', 'andrea'];
+  newName = '';
+
+  thingsToDo = ['estudiar Angular', 'ir al gimnasio', 'recuperarse de una lesion'];
+  newThingsToDo = '';
+
   toggleButton() {
     this.btnDisabled = !this.btnDisabled;
   }
@@ -31,5 +37,19 @@ export class AppComponent {
   changeName(event: Event) {
     const element = event.target as HTMLInputElement;
     this.person.name = element.value;
+  }
+  addName() {
+    this.names.push(this.newName);
+    this.newName = '';
+  }
+  deleteName(index: number) {
+    this.names.splice(index, 1);
+  }
+  addThings() {
+    this.thingsToDo.push(this.newThingsToDo);
+    this.newThingsToDo = '';
+  }
+  deleteThings(index: number) {
+  this.thingsToDo.splice(index, 1);
   }
 }
