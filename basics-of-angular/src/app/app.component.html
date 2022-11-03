@@ -4,6 +4,15 @@
 <p>Edad: {{ person.age }}</p>
 <button (click)="increaseAge()">Increase age</button>
 <button (click)="decreaseAge()">Decrease age</button>
+<div class="box" (scroll)="onScroll($event)">
+  <p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus
+    possimus nam neque distinctio sed sit ipsam modi odio cumque officiis? Quae
+    quibusdam adipisci velit voluptas nulla eveniet! Maxime, iure sapiente.
+  </p>
+</div>
+<input type="text" [value]="person.name" (keyup)="changeName($event)" />
+<p>Nombre: {{ person.name }}</p>
 
 <hr />
 <h1>Property Binding</h1>
