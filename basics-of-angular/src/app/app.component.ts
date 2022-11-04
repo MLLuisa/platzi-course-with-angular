@@ -19,6 +19,12 @@ export class AppComponent {
     background: 'red'
   }
 
+  register = {
+    name: '',
+    email: '',
+    password: ''
+  }
+
   person = {
     name: 'Ivan',
     age: 20,
@@ -94,5 +100,9 @@ export class AppComponent {
   }
   deleteThings(index: number) {
   this.thingsToDo.splice(index, 1);
+  }
+  onRegister() {
+    console.log(this.register);
+
   }
 }
